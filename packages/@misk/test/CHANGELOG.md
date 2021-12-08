@@ -1,9 +1,24 @@
 # Change Log - @misk/test
 
-This log was last generated on Mon, 18 Jan 2021 21:18:43 GMT and should not be manually modified.
+This log was last generated on Thu, 05 Aug 2021 05:54:19 GMT and should not be manually modified.
 
-## 0.1.27
-Mon, 18 Jan 2021 21:18:43 GMT
+## 0.3.3
+Thu, 05 Aug 2021 05:54:19 GMT
+
+_Version update only_
+
+## 0.3.2
+Thu, 05 Aug 2021 05:38:01 GMT
+
+_Version update only_
+
+## 0.3.1
+Thu, 05 Aug 2021 04:40:22 GMT
+
+_Version update only_
+
+## 0.3.0
+Tue, 27 Jul 2021 00:04:10 GMT
 
 _Version update only_
 

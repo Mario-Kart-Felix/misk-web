@@ -11,9 +11,8 @@
   {
     "definitionName": "lockStepVersion",
     "policyName": "MiskWeb",
-    "version": "0.2.0-13",
-    // "nextBump": "patch" // Manual stable releases
-    "nextBump": "prerelease" // CI published alpha builds
+    "version": "0.3.3",
+    "nextBump": "patch" // Manual stable releases
   }
   // {
   //   /**

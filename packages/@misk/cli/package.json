@@ -1,15 +1,18 @@
 {
   "name": "@misk/cli",
-  "version": "0.2.0-13",
+  "version": "0.3.3",
   "license": "SEE LICENSE IN https://github.com/cashapp/misk-web",
   "description": "Misk-Web CLI Build Tool",
   "author": "CashApp/Misk-Web Authors (https://github.com/cashapp/misk-web/graphs/contributors)",
   "main": "lib/src/index.js",
   "bin": {
-    "miskweb": "lib/src/index.js"
+    "miskweb": "miskweb"
   },
   "files": [
-    "lib"
+    "lib",
+    "miskweb",
+    "plopfile.js",
+    "plop-templates"
   ],
   "engines": {
     "node": ">= 0.2.0"
@@ -19,10 +22,10 @@
     "clean": "rm -rf lib",
     "ci-build": "npm run-script clean && npm run-script lib",
     "lib": "npm run-script build",
-    "lint": "prettier --write --config package.json \"{src/**/,tests/**/,.}*.{md,css,sass,less,json,js,jsx,ts,tsx}\"",
+    "lint": "prettier --write --config package.json \".{/src/**/,/}*.{md,css,sass,less,json,js,jsx,ts,tsx}\"",
     "start": "node lib/src/index.js",
     "watch": "./node_modules/.bin/tsc -w",
-    "build": "npm run-script clean && npm run-script lint && npm run-script buildcli && npm run test",
+    "build": "npm run-script clean && npm run-script buildcli && npm run test",
     "buildcli": "./node_modules/.bin/tsc",
     "buildrun": "npm run-script build && npm run-script start",
     "prepare": "npm run-script ci-build && npm run-script buildcli",
@@ -31,46 +34,47 @@
     "test": "jest --passWithNoTests  --maxWorkers=2"
   },
   "dependencies": {
-    "@misk/prettier": "0.2.0-13",
-    "@misk/test": "0.2.0-13",
-    "axios": "0.21.1",
-    "dayjs": "1.10.3",
+    "@misk/prettier": "0.3.3",
+    "@misk/test": "0.3.3",
+    "axios": "0.21.4",
+    "dayjs": "1.10.7",
     "fs-extra": "9.1.0",
-    "klaw": "3.0.0",
-    "lodash": "4.17.20",
-    "pkg": "4.5.1",
-    "prettier": "2.2.1",
+    "klaw": "4.0.1",
+    "lodash": "4.17.21",
+    "node-plop": "0.26.3",
+    "pkg": "4.4.8",
+    "prettier": "1.19.1",
     "progress": "2.0.3",
     "root-require": "0.3.1",
-    "semver": "7.3.5",
-    "shelljs": "0.8.4",
-    "tslib": "2.2.0",
-    "typescript": "4.1.3",
-    "yargs": "16.2.0"
+    "shelljs": "0.8.3",
+    "tslib": "2.3.1",
+    "typescript": "3.9.10",
+    "yargs": "15.3.1"
   },
   "devDependencies": {
-    "@emotion/jest": "11.3.0",
-    "@misk/dev": "0.2.0-13",
-    "@testing-library/dom": "7.30.3",
-    "@testing-library/react": "11.2.6",
-    "@types/fs-extra": "9.0.11",
-    "@types/jest": "26.0.22",
-    "@types/klaw": "3.0.1",
-    "@types/lodash": "4.14.167",
-    "@types/node": "14.14.41",
-    "@types/semver": "7.3.4",
-    "@types/shelljs": "0.8.8",
-    "@types/yargs": "15.0.13",
-    "jest": "26.6.3",
-    "jest-serializer-html": "7.0.0",
-    "ts-jest": "26.5.5"
+    "@misk/dev": "0.3.3",
+    "@misk/tslint": "0.3.3",
+    "@testing-library/dom": "7.2.2",
+    "@testing-library/react": "9.1.1",
+    "@types/fs-extra": "9.0.13",
+    "@types/jest": "27.0.2",
+    "@types/klaw": "3.0.3",
+    "@types/lodash": "4.14.176",
+    "@types/node": "16.11.6",
+    "@types/shelljs": "0.8.7",
+    "@types/yargs": "15.0.4",
+    "jest": "24.9.0",
+    "jest-emotion": "10.0.14",
+    "jest-serializer-html": "7.1.0",
+    "ts-jest": "24.3.0"
   },
   "jest": {
     "testEnvironment": "node",
+    "testTimeout": 10000,
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "testRegex": "cli/tests/.*(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",

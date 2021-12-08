@@ -6,14 +6,13 @@
   "rawIndex": false,
   "rawPackageJson": {},
   "rawTsconfig": {},
-  "rawTsconfigInclude": [],
+  "rawTslint": {},
   "rawWebpackConfig": {},
   "relative_path_prefix": "",
   "slug": "starter-basic",
   "useWebpackBundleAnalyzer": false,
   "useWebpackExternals": false,
-  "version": "0.2.0-13",
+  "version": "0.3.3",
   "zipOnBuild": true,
-  "___DeprecatedKeys": "Any keys below this point in your miskTab.json are deprecated and can be safely removed.",
-  "rawTslint": {}
+  "___DeprecatedKeys": "Any keys below this point in your miskTab.json are deprecated and can be safely removed."
 }
